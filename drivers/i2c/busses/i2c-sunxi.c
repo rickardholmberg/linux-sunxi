@@ -438,7 +438,7 @@ static int aw_twi_stop(void *base_addr)
 	aw_twi_get_stop(base_addr);/* it must delay 1 nop to check stop bit */
 	while(( 1 == aw_twi_get_stop(base_addr))&& (--timeout));
 	if(timeout == 0) {
-		i2c_dbg("1.STOP can't sendout!\n");
+		//i2c_dbg("1.STOP can't sendout!\n");
 		return AWXX_I2C_FAIL;
 	}
 
@@ -740,7 +740,7 @@ static int i2c_sunxi_core_process(struct sunxi_i2c *i2c)
 ok_out:
 err_out:
 	if(AWXX_I2C_FAIL == aw_twi_stop(base_addr)) {
-		i2c_dbg("STOP failed!\n");
+		//i2c_dbg("STOP failed!\n");
 	}
 
 msg_null:
