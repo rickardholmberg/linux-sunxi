@@ -1083,8 +1083,8 @@ static int i2c_sunxi_probe(struct platform_device *dev)
 
 	platform_set_drvdata(dev, i2c);
 
-	i2c_dbg(KERN_INFO "I2C: %s: AW16XX I2C adapter\n",
-	       dev_name(&i2c->adap.dev));
+	i2c_dbg(KERN_INFO "I2C: %s: AW16XX I2C adapter, bus frequency %i Hz\n",
+	       dev_name(&i2c->adap.dev), i2c->bus_freq);
 
 
 	return 0;
